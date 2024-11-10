@@ -2,26 +2,139 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* styles/global.css */
+
+/* Global reset and styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  background-color: #f0f2f5; /* Light gray background */
+  color: #2B3A67; /* Dark blue text */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Styling for the CounterPage component */
+.counter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 20px;
+  background-color: #f0f2f5; /* Light gray background for the entire page */
+}
+
+.counter-heading {
+  font-size: 2.5rem;
+  color: #2B3A67; /* Dark blue heading */
+  margin-bottom: 20px;
+}
+
+.counter-display {
+  font-size: 1.8rem;
+  color: #2B3A67; /* Dark blue text */
+  margin-bottom: 30px;
+}
+
+.counter-button {
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  background-color: #FF7F50; /* Soft orange background */
+  color: #f0f2f5; /* Light gray text */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.counter-button:hover {
+  background-color: #e3693a; /* Darker shade of orange */
+  transform: translateY(-3px);
+}
+
+.counter-button:active {
+  transform: translateY(1px);
+}
+
+/* Responsive Styles */
+@media (max-width: 425px) {
+  .counter-heading {
+    font-size: 5rem;
+  }
+  .counter-display {
+    font-size: 4rem;
+  }
+  .counter-button {
+    font-size: 3rem;
+    padding: 10px 20px;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+
+@media (min-width: 425px) {
+  .counter-heading {
+    font-size: 5.5rem;
+  }
+  .counter-display {
+    font-size: 4.5rem;
+  }
+  .counter-button {
+    font-size: 3.5rem;
+    padding: 18px 36px;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+
+@media (min-width: 768px) {
+  .counter-heading {
+    font-size: 6rem;
+  }
+  .counter-display {
+    font-size: 5rem;
+  }
+  .counter-button {
+    font-size: 4rem;
+    padding: 14px 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .counter-heading {
+    font-size: 7rem;
+  }
+  .counter-display {
+    font-size: 6rem;
+  }
+  .counter-button {
+    font-size: 5rem;
+    padding: 16px 32px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .counter-heading {
+    font-size: 8rem;
+  }
+  .counter-display {
+    font-size: 7rem;
+  }
+  .counter-button {
+    font-size: 6rem;
+    padding: 18px 36px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .counter-heading {
+    font-size: 9rem;
+  }
+  .counter-display {
+    font-size: 8rem;
+  }
+  .counter-button {
+    font-size: 7rem;
+    padding: 20px 40px;
   }
 }
